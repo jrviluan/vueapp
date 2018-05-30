@@ -1,0 +1,26 @@
+git --version -> check git version
+touch index.html -> create a file (ie: index.html)
+git init -> initialize directory(create a git folder)
+git config --global user.name 'Jay ar Viluan' -> create username
+git add .   -> add all files on GIT
+git add *.html (add all html file on GIT)
+git rm --cached index.html -> remove file in staging
+
+
+git status 	-> check status
+touch .gitignore -> create a .gitignore file where to put files that we want to ignore
+git commit -m 'comment' -> commit changes and add a comment
+git branch login -> create another branch(ie: login)
+git checkout login -> switch to login branch	
+git merge 'login' -> merge changes made from 'login branch to master branch'
+git pull -> check all updates
+
+
+GITHUB
+git remote add origin https://github.com/jrviluan/myappsample.git
+git remote
+git push -u origin master
+git push -> add file on GITHUB
+
+Clone
+git clone git clone https://github.com/jrviluan/myappsample.git
