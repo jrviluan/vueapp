@@ -16,7 +16,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                	<router-link :to="'/product'" exact class="nav-link">Products</router-link>
                     <a href="#pageSubmenu" data-toggle="collapse">Pages<menu-down-icon class="right"/></a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li><a href="#">Page 1</a></li>
@@ -25,10 +25,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <router-link :to="'/user'" exact class="nav-link">User</router-link>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <router-link :to="'/'" exact>Logout</router-link>
                 </li>
             </ul>
            

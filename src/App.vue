@@ -2,7 +2,7 @@
   <div id="app">
     <!--<app-header  v-if="$route.name != 'login'"></app-header> -->
    
- 	<app-sidebar></app-sidebar>
+ 	<app-sidebar v-if="$route.name != 'login'"></app-sidebar>
     <router-view></router-view>
   </div>
 </template>
