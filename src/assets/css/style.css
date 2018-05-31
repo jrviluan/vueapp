@@ -2,6 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    background-color: #fff;
 }
 
 p {
@@ -15,7 +16,7 @@ a, a:focus{
     color: #fff !important;
 }
 a:hover {
-    color:  #7386D5 !important;
+    color:  #000 !important;
     text-decoration: none;
     transition: all 0.3s;
 }
@@ -53,7 +54,7 @@ a:hover {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: #c59c67;
     color: #fff !important;
     transition: all 0.3s;
 }
@@ -64,12 +65,12 @@ a:hover {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #c59c67;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #fff;
 }
 
 #sidebar ul p {
@@ -84,14 +85,13 @@ a:hover {
 }
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: #c59c67;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    color: #000 !important;
+    background: #fff;
 }
-
 
 a[data-toggle="collapse"] {
     position: relative;
@@ -111,7 +111,8 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #fff;
+    color: #000 !important;
 }
 
 ul.CTAs {
@@ -171,4 +172,13 @@ a.article, a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #0c1823;
 }

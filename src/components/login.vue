@@ -1,9 +1,12 @@
 <template>
-  <div class="container login">
-    <form novalidate class="md-layout offset-md-4" @submit.prevent="validateUser">
+  <div class="login row">
+    <div class="container offset-md-4 col-md-6">
+    <form novalidate class="md-layout" @submit.prevent="validateUser">
       <md-card class="md-layout-item md-size-60 md-small-size-100 card border-primary">
-        <md-card-header class="bg-primary">
-          <div class="md-title text-white">Login</div>
+        <md-card-header>
+          <div class="md-title text-center">
+            <img src="../assets/images/logo-afreight.png" class="img-fluid">
+          </div>
         </md-card-header>
 
         <md-card-content>
@@ -24,13 +27,14 @@
           </md-field>
         </md-card-content>
 
-        <md-progress-bar md-mode="indeterminate" v-if="sending" />
+        <md-progress-bar md-mode="indeterminate" v-if="sending"/></md-progress-bar>
 
-        <md-card-actions>
-          <md-button type="submit" class="md-primary" :disabled="sending">Login</md-button>
+        <md-card-actions class="lg-btn">
+          <md-button type="submit" class=" text-white md-button btn-block btn-primary" :disabled="sending">Login</md-button>
         </md-card-actions>
       </md-card>
     </form>
+    </div>
   </div>
 </template>
 <script>
@@ -100,11 +104,13 @@ import { validationMixin } from 'vuelidate'
     right: 0;
     left: 0;
   }
-  .card, .card-header {
-    border-radius: 0px !important; 
-  }
   .login{
-    padding-top: 10rem;
+    padding-top: 5rem;
   }
-  
+  .img-fluid { 
+    height: 8rem; 
+  }
+  .lg-btn{
+    padding-top: 2rem;
+  }
 </style>

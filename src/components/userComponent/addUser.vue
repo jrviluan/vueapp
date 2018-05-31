@@ -1,27 +1,7 @@
 <template>
   <div class="container content">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
 
-            <div class="navbar-header">
-                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                    <i class="glyphicon glyphicon-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <md-button class="md-raised md-primary" v-on:click="addUser">Add User</md-button>
-
     <div v-if="isActive">
       <form novalidate class="md-layout">
         <md-card class="md-layout-item md-size-50 md-small-size-100">
@@ -111,109 +91,7 @@
   </div>
 </template>
 
-<script>
-  import userList from './userList'
-  import { validationMixin } from 'vuelidate'
-  import {
-    required,
-    email,
-    minLength,
-    maxLength,
-    sameAs
-  } from 'vuelidate/lib/validators'
-
-  export default {
-    components: {
-            'app-user': userList
-    },
-    name: 'FormValidation',
-    mixins: [validationMixin],
-    data: () => ({
-      isActive: false,
-      form: {
-        firstName: null,
-        lastName: null,
-        gender: null,
-        age: null,
-        email: null,
-        password: null,
-        cpassword: null,
-      },
-      userSaved: false,
-      sending: false,
-      lastUser: null
-    }),
-    validations: {
-      form: {
-        firstName: {
-          required,
-          minLength: minLength(3)
-        },
-        lastName: {
-          required,
-          minLength: minLength(3)
-        },
-        age: {
-          required,
-          maxLength: maxLength(3)
-        },
-        gender: {
-          required
-        },
-        email: {
-          required,
-          email
-        },
-        password: {
-          required,
-          minLength: minLength(8)
-        },
-        cpassword: {
-          sameAsPassword: sameAs('password')
-        }
-      }
-    },
-    methods: {
-      addUser(){
-            this.isActive = !this.isActive;
-          // some code to filter users
-      },
-      getValidationClass (fieldName) {
-        const field = this.$v.form[fieldName]
-
-        if (field) {
-          return {
-            'md-invalid': field.$invalid && field.$dirty
-          }
-        }
-      },
-      clearForm () {
-        this.$v.$reset()
-        this.form.firstName = null
-        this.form.lastName = null
-        this.form.age = null
-        this.form.gender = null
-        this.form.email = null
-        this.form.password = null
-        this.form.cpassword = null
-      },
-      saveUser () {
-          this.$http.post('https://vue-tutorial-5d9a4.firebaseio.com/posts.json', this.form).then(function(data){
-          console.log(data)
-          this.sending = true;
-        });
-      },
-      validateUser () {
-  
-        this.$v.$touch()
-
-        if (!this.$v.$invalid) {
-          this.saveUser()
-        }
-      }
-    }
-  }
-</script>
+<script src="./user.js"></script>
 
 <style lang="scss" scoped>
   .md-progress-bar {

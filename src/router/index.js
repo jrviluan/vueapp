@@ -1,5 +1,5 @@
 import Login from '@/components/login'
-import User from '@/components/user'
+import User from '@/components/userComponent/addUser'
 import Product from '@/components/product'
 
 

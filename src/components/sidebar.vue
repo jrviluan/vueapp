@@ -3,7 +3,7 @@
             <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <img src="../assets/images/logo-afreight.png" class="img-fluid">
             </div>
 
             <ul class="list-unstyled components">
